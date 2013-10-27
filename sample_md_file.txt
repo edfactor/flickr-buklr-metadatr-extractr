@@ -1,0 +1,29 @@
++--------+
+|  INFO  |
++--------+
+Photographer : photographerName
+Photo URL    : http://www.flickr.com/photos/4444444/1111111/
+License      : Creative Commons (http://creativecommons.org/licenses)
+Taken Date   : Fri Oct 25 17:06:41 GMT-0400 2013
+Upload Date  : Sat Oct 26 10:57:00 GMT-0400 2013
+Geotag Info  : Latitude:32.30228, Longitude:-75.111347
+Views        : 0
+Comments     : 0
+
+
++---------+
+|  TITLE  |
++---------+
+Title-of-photo
+
+
++---------------+
+|  DESCRIPTION  |
++---------------+
+This is the description
+
+
++--------+
+|  TAGS  |
++--------+
+firsttag second tag 
