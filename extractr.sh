@@ -58,7 +58,7 @@ echo "Output File is $outputfile"
 directorystring="$directory/*.txt"
 
 # Settings for each metadata field
-use_photographer=true
+use_photographer=false
 use_url=true
 use_license=false
 use_taken=true
@@ -66,8 +66,8 @@ use_uploaded=false
 use_lat=true
 use_long=true
 use_title=false
-use_desc=true
-use_tags=true
+use_desc=false
+use_tags=false
 
 # Create top line of csv
 
@@ -266,6 +266,15 @@ do
  	   outputstring="$outputstring,$license"	
      else
  	   outputstring="$license"
+ 	   first_there=true
+     fi  
+ fi
+ 
+ if [ $use_url == true  ]; then
+ 	if [ $first_there == true  ]; then
+ 	   outputstring="$outputstring,$url"	
+     else
+ 	   outputstring="$url"
  	   first_there=true
      fi  
  fi
