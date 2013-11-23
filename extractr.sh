@@ -173,6 +173,24 @@ fi
 
 echo $buildstring > $outputfile
 
+function convert_date() {
+
+  local myresult=$1
+  final_string=$(echo ${myresult:4:3})
+  # This is the number part
+  num_check=$(echo ${myresult:7:3})
+  if [ "$num_check" -lt 10 ]
+    then num_check="0$num_check"
+  fi
+  final_string="$final_string-$num_check"
+
+  st_len=${#myresult}
+  num=$(($st_len - 4))
+  year=(${myresult:$num:4})
+  local answer_string="$final_string-$year"
+  echo $answer_string
+}
+
 for file in $directorystring 
 do
 
@@ -197,7 +215,8 @@ do
  # Taken
  if [ $use_taken == true  ];
  then
-   taken=$(cat "$file" | sed -n 's/Taken Date[[:space:]]*:[^A-Z]\(.*\)/\1/p') 
+   taken=$(cat "$file" | sed -n 's/Taken Date[[:space:]]*:[^A-Z]\(.*\)/\1/p')
+   taken=$(convert_date "$taken")
  fi 
 
 
